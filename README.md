@@ -11,4 +11,4 @@ Results are fed to ChatGPT 3.5 to generate 5 questions to understand user's beer
 Based on the answers of the questions
 Comment Similarity (Matrix Multiplication) is calculated to return top 3 most similar Imperial in database. 
 
-![Simple Recommendation Chatbot]([http://url/to/img.png](https://github.com/JamesMachine/beer_chatbot_U-Glow/blob/main/chatbot_png.png)https://github.com/JamesMachine/beer_chatbot_U-Glow/blob/main/chatbot_png.png?raw=true)
+![Simple Recommendation Chatbot](chatbot_png.png)
