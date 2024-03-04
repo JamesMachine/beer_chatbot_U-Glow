@@ -6,11 +6,18 @@ import numpy as np
 import pandas as pd
 
 openai.api_key = st.secrets['OAK']
+
+# prepare transformer
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L12-v2')
 
+# load pretrained comment embedding matrix
 com_embedding = np.load('com_embeddings.npy')
 
 def summarize(conversations):
+    
+    """
+    Generate a summary by loading previous conversation on the 4 questions asked to ChatGpt 3.5 turbo
+    """
     
     full_response = ""
 
@@ -24,6 +31,15 @@ def summarize(conversations):
     return full_response    
 
 def sim(conversations):
+
+    """
+    1. Generate a summary of the conversation
+    2. Encode the generated summary by Sen2Vec transformer
+    3. Calculate similarity by matrix multiplication
+    4. Extract 3 beers with the highest similarity score
+    5. Retrieve the beer name and url
+    6. Prepare result into desired format
+    """
 
     summary = summarize(conversations)
     emb_summary = model.encode(summary)
@@ -39,6 +55,6 @@ def sim(conversations):
     desired_format = ""
     for i, entry in enumerate(li_rec):
         beer_name, beer_url = entry
-        desired_format += f"{i}. {beer_name} : {beer_url}\n"
+        desired_format += f"{i+1}. {beer_name} : {beer_url}\n"
 
     return desired_format
