@@ -20,7 +20,7 @@ Preference Analysis:
 
 ![Simple Recommendation Chatbot](chatbot_png.png)
 
-To find your perfect match: Please clone this repository and then run "streamlit run st_chatbot_stcode.py" in terminal
+To find your perfect match: Please clone this repository and then run "streamlit run beer_recommendation_chatbot.py" in terminal
 
 If you have any enquiries, please feel free to let me know!  
 Enjoy! 😚
